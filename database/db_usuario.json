@@ -2,9 +2,15 @@
     "user": [
         {
             "id": 1,
-            "nome": "usuario",
-            "email": "usuario@gmail.com",
+            "nome": "Maria",
+            "email": "maria@gmail.com",
             "senha": "12345"
+        },
+        {
+            "id": 2,
+            "nome": "Usuario 1",
+            "email": "usuario@gmail.com",
+            "senha": "123"
         }
     ]
 }
