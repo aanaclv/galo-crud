@@ -1,0 +1,18 @@
+[
+    {
+        "id": "5877c06a44fbaecc",
+        "usuario_id": "ed7cb3dedaf4dd51",
+        "solo_id": "32885b51c68c2fb3",
+        "solo_nome": "Sem nome",
+        "criado_em": "2026-11-25T11:22:38",
+        "diagnostico": {
+            "ph": 7.0,
+            "classificacao_ph": "Adequado",
+            "fosforo": 8.0,
+            "prioridade_fosforo": "Alta",
+            "potassio": 9.0,
+            "prioridade_potassio": "Alta",
+            "recomendacoes": []
+        }
+    }
+]

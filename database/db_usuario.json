@@ -1,3 +1,9 @@
-{
-    "user": []
-}
+[
+    {
+        "id": "ed7cb3dedaf4dd51",
+        "nome": "Maria",
+        "email": "maria@gmail.com",
+        "salt": "4678744b7e41028c4c525e5ca4035b3b",
+        "senha_hash": "6151bb8a803cb9203883be836dc3f50685b3b0b248f186e4ecd99139fd60e8f9"
+    }
+]
