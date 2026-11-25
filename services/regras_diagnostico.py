@@ -2,6 +2,7 @@ FAIXA_PH_ADEQUADO = (5.5, 7.0)
 FAIXA_FOSFORO_MEDIO = (10, 20)
 FAIXA_POTASSIO_MEDIO = (50, 100)
 
+
 def classificar_ph(ph):
 
     if ph < FAIXA_PH_ADEQUADO[0]:
@@ -12,6 +13,7 @@ def classificar_ph(ph):
 
     else:
         return "Alcalino"
+
 
 def classificar_fosforo(fosforo):
 
@@ -24,6 +26,7 @@ def classificar_fosforo(fosforo):
     else:
         return "Baixa"
 
+
 def classificar_potassio(potassio):
 
     if potassio < FAIXA_POTASSIO_MEDIO[0]:
@@ -34,6 +37,7 @@ def classificar_potassio(potassio):
 
     else:
         return "Baixa"
+
 
 def gerar_diagnostico(ph, fosforo, potassio):
 
@@ -51,31 +55,36 @@ def gerar_diagnostico(ph, fosforo, potassio):
 
     recomendacoes = []
 
-    if ph < 5.5:
+    # Ajustado: usa a constante FAIXA_PH_ADEQUADO[0] em vez de literal mágico 5.5
+    if ph < FAIXA_PH_ADEQUADO[0]:
         recomendacoes.append("Aplicar correção da acidez do solo.")
 
     if FAIXA_FOSFORO_MEDIO[0] <= fosforo <= FAIXA_FOSFORO_MEDIO[1]:
         recomendacoes.append("Melhorar adubação fosfatada.")
 
-    if potassio > 100:
+    # Ajustado: usa a constante FAIXA_POTASSIO_MEDIO[1] em vez de literal mágico 100
+    if potassio > FAIXA_POTASSIO_MEDIO[1]:
         recomendacoes.append("Continuar acompanhando os níveis de potássio.")
 
     diagnostico["recomendacoes"] = recomendacoes
 
     return diagnostico
 
+
 def validar_dados(ph, fosforo, potassio):
 
-    if not isinstance(ph, (int, float)):
+    # Ajustado: rejeita bool (pois em Python bool é subclasse de int, ex.: True == 1)
+    if isinstance(ph, bool) or not isinstance(ph, (int, float)):
         return False
 
-    if not isinstance(fosforo, (int, float)):
+    if isinstance(fosforo, bool) or not isinstance(fosforo, (int, float)):
         return False
 
-    if not isinstance(potassio, (int, float)):
+    if isinstance(potassio, bool) or not isinstance(potassio, (int, float)):
         return False
 
-    if ph < 0 or fosforo < 0 or potassio < 0:
+    # Ajustado: limita pH ao intervalo válido [0, 14] e rejeita valores negativos
+    if ph < 0 or ph > 14 or fosforo < 0 or potassio < 0:
         return False
 
     return True

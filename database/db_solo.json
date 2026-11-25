@@ -1,3 +1,12 @@
-{
-    "solo": []
-}
+[
+    {},
+    {
+        "id": "32885b51c68c2fb3",
+        "usuario_id": "ed7cb3dedaf4dd51",
+        "criado_em": "2026-11-25T11:18:03",
+        "propriedade": "Terra M",
+        "cidade": "M",
+        "area": 5999.0,
+        "cultura": "Milho"
+    }
+]
