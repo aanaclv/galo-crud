@@ -63,7 +63,7 @@ Nome: José da Silva
 
 Propriedade: Sítio Esperança
 
-Cidade: Caruaru - PE
+Cidade: Caruaru
 
 Área: 5 hectares
 
@@ -155,46 +155,21 @@ O projeto foi desenvolvido utilizando os conceitos trabalhados em sala:
 ## 🗂️ Estrutura do Projeto
 
 ```text
-galo/
-
+galo-crud/
+│
+├── database/
+│   ├── db_usuario.json
+│   ├── db_solo.json
+│   └── db_tutorial.json
+│
+├── entidades/
+│   ├── usuario.py
+│   └── analise.py
+│
 ├── main.py
-├── crud.py
-├── regras_solo.py
-├── arquivo.py
-├── utils.py
-├── dados.json
 └── README.md
+
 ```
-
----
-
-## 🔄 Fluxo do Sistema
-
-```text
-Início
-   ↓
-Menu Principal
-   ↓
-Cadastrar Diagnóstico
-   ↓
-Informar Dados do Agricultor
-   ↓
-Informar Dados do Laudo
-   ↓
-Analisar Solo
-   ↓
-Gerar Diagnóstico Simplificado
-   ↓
-Salvar em JSON
-   ↓
-Exibir Resultado
-   ↓
-Consultar / Atualizar / Excluir
-   ↓
-Fim
-```
-
----
 
 ## 💾 Persistência de Dados
 
