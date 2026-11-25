@@ -1,18 +1,18 @@
 from entidades import solo, usuario
 
-# Ajustado: import único e limpo de services.analise (regras_diagnostico já é acionado dentro de analise.py)
+
 try:
     from services import analise
 except ImportError:
     analise = None
 
 
-# Ajustado: helper reutilizável para converter números aceitando vírgula ou ponto
+
 def _ler_numero(mensagem):
     return float(input(mensagem).replace(",", ".").strip())
 
 
-# Ajustado: prioriza a propriedade do solo (com fallbacks) para não exibir "Sem nome"
+
 def _identificar_propriedade(item):
     if not isinstance(item, dict):
         return "Propriedade não informada"
@@ -25,7 +25,7 @@ def _identificar_propriedade(item):
     )
 
 
-# Ajustado: formata cada solo cadastrado de forma legível na listagem
+
 def _formatar_solo(solo_item, indice=None):
     if not isinstance(solo_item, dict):
         return str(solo_item)
@@ -50,7 +50,7 @@ def _formatar_solo(solo_item, indice=None):
     return "\n".join(linhas)
 
 
-# Ajustado: formata os dados do perfil do usuário de forma limpa em vez de imprimir o dicionário bruto
+
 def _formatar_perfil(perfil):
     if not isinstance(perfil, dict):
         return str(perfil)
@@ -67,10 +67,10 @@ def _formatar_perfil(perfil):
     return "\n".join(linhas)
 
 
-# Ajustado: formata o resultado da análise de forma reutilizável para criação, listagem, consulta e atualização
+
 def _formatar_analise(analise_item, titulo="Análise"):
     diag = analise_item.get("diagnostico", {})
-    # Ajustado: exibe a propriedade vinculada à análise em vez de depender de "solo_nome" / "Sem nome"
+    
     propriedade_solo = _identificar_propriedade(analise_item)
     solo_id = analise_item.get("solo_id", "-")
     recomendacoes = diag.get("recomendacoes") or []
@@ -110,7 +110,7 @@ def menu_solo(user):
         op = input("Opção: ").strip()
 
         try:
-            # Ajustado: solo agora cadastra apenas dados do terreno (sem pH, fósforo e potássio)
+            
             if op == "1":
                 s = solo.cadastrar_solo(
                     uid,
@@ -121,7 +121,7 @@ def menu_solo(user):
                 )
                 print("Criado! ID:", s["id"])
             elif op == "2":
-                # Ajustado: formata cada solo listado e trata lista vazia
+                
                 solos = solo.listar_solos(uid)
                 if not solos:
                     print("Nenhum solo cadastrado.")
@@ -152,8 +152,7 @@ def menu_solo(user):
             print("Erro:", e)
 
 
-# Ajustado: recebe user para listar/selecionar o solo do usuário e vincular a análise ao solo escolhido
-def menu_analise(user):
+
     if not analise:
         print("Módulo de análise indisponível.")
         return
@@ -178,7 +177,7 @@ def menu_analise(user):
 
                 print("\nSolos disponíveis:")
                 for s in solos:
-                    # Ajustado: exibe a propriedade do solo em vez de "Nome: Sem nome"
+                    
                     propriedade_solo = _identificar_propriedade(s)
                     print(
                         f"- ID: {s.get('id', '-')} | "
@@ -187,7 +186,7 @@ def menu_analise(user):
                         f"Cultura: {s.get('cultura', '-')}"
                     )
 
-                # Ajustado: solicita qual solo será analisado antes de pedir pH, fósforo e potássio
+                
                 solo_id = input("Informe o ID do solo desejado: ").strip()
                 solo.consultar_solo(uid, solo_id)
 
@@ -196,10 +195,10 @@ def menu_analise(user):
                 potassio = _ler_numero("Potássio: ")
 
                 criada = analise.cadastrar_analise(uid, solo_id, ph, fosforo, potassio)
-                # Ajustado: exibe a análise formatada em vez do dicionário bruto
+                
                 print(_formatar_analise(criada, titulo="Análise criada com sucesso!"))
             elif op == "2":
-                # Ajustado: formata cada item da listagem e informa quando não houver análises
+                
                 analises = analise.listar_analises(uid)
                 if not analises:
                     print("Nenhuma análise cadastrada.")
@@ -209,7 +208,7 @@ def menu_analise(user):
             elif op == "3":
                 aid = input("ID da análise: ").strip()
                 consultada = analise.consultar_analise(uid, aid)
-                # Ajustado: exibe a análise consultada no mesmo padrão formatado
+                
                 print(_formatar_analise(consultada, titulo="Consulta de Análise"))
             elif op == "4":
                 aid = input("ID da análise: ").strip()
@@ -217,7 +216,7 @@ def menu_analise(user):
                 fosforo = _ler_numero("Novo Fósforo: ")
                 potassio = _ler_numero("Novo Potássio: ")
                 atualizada = analise.atualizar_analise(uid, aid, ph, fosforo, potassio)
-                # Ajustado: exibe a análise atualizada no mesmo padrão formatado
+                
                 print(_formatar_analise(atualizada, titulo="Análise atualizada!"))
             elif op == "5":
                 aid = input("ID da análise: ").strip()
@@ -246,10 +245,10 @@ def menu_logado(user):
             if op == "1":
                 menu_solo(user)
             elif op == "2":
-                # Ajustado: passa user para menu_analise
+                
                 menu_analise(user)
             elif op == "3":
-                # Ajustado: exibe o perfil do usuário formatado
+                
                 perfil_atual = usuario.consultar_usuario(user["id"])
                 print(_formatar_perfil(perfil_atual))
             elif op == "4":
