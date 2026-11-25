@@ -42,7 +42,6 @@ O GALO foi criado para simplificar esse processo, traduzindo os resultados do la
 
 ### Informações do Agricultor
 
-- Nome
 - Nome da propriedade
 - Cidade
 - Área da propriedade
@@ -74,36 +73,6 @@ pH: 5.2
 Fósforo: 8
 
 Potássio: 70
-```
-
----
-
-## 📊 Exemplo de Resultado
-
-```text
-============================================================
-
-                 GALO - Guia do Agricultor Local
-
-============================================================
-
-Olá, José da Silva!
-
-Analisamos os dados informados para sua lavoura de milho.
-
-Encontramos 3 oportunidades de melhoria para aumentar sua produtividade.
-
-🔴 PRIORIDADE ALTA
-✓ Corrigir a acidez do solo.
-✓ Aplicar calcário para melhorar as condições do plantio.
-
-🟡 PRIORIDADE MÉDIA
-✓ Reforçar a adubação com fósforo.
-
-🟢 PRIORIDADE BAIXA
-✓ Continuar monitorando os níveis de potássio.
-
-============================================================
 ```
 
 ---
