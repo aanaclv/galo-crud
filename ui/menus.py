@@ -5,11 +5,10 @@ try:
 except ImportError:
     analise = None
 
-from ui.utilitarios import (
-    ler_numero,
-)
+
 
 from ui.formatadores import (
+    formatar_numero,
     formatar_solo,
     formatar_perfil,
     formatar_analise,
@@ -195,7 +194,7 @@ def menu_solo(user):
                     uid,
                     propriedade=input("Propriedade: "),
                     cidade=input("Cidade: "),
-                    area=ler_numero("Área (ha): "),
+                    area=formatar_numero("Área (ha): "),
                     cultura=input("Cultura: "),
                 )
 
@@ -240,7 +239,7 @@ def menu_solo(user):
                     sid,
                     propriedade=input("Propriedade: "),
                     cidade=input("Cidade: "),
-                    area=ler_numero("Área (ha): "),
+                    area=formatar_numero("Área (ha): "),
                     cultura=input("Cultura: "),
                 )
 
@@ -325,9 +324,9 @@ def menu_analise(user):
                     solo_id
                 )
 
-                ph = ler_numero("pH (5.5 - 7.0): ")
-                fosforo = ler_numero("Fósforo (mg/dm³) (10 - 20): ")
-                potassio = ler_numero("Potássio (cmolc/dm³) (50 - 100): ")
+                ph = formatar_numero("pH (5.5 - 7.0): ")
+                fosforo = formatar_numero("Fósforo (mg/dm³) (10 - 20): ")
+                potassio = formatar_numero("Potássio (cmolc/dm³) (50 - 100): ")
 
                 criada = analise.cadastrar_analise(
                     uid,
@@ -392,11 +391,11 @@ def menu_analise(user):
                     "ID da análise: "
                 ).strip()
 
-                ph = ler_numero("Novo pH: ")
-                fosforo = ler_numero(
+                ph = formatar_numero("Novo pH: ")
+                fosforo = formatar_numero(
                     "Novo Fósforo: "
                 )
-                potassio = ler_numero(
+                potassio = formatar_numero(
                     "Novo Potássio: "
                 )
 

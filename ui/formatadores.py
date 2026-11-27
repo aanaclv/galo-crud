@@ -1,3 +1,6 @@
+def formatar_numero(mensagem):
+    return float(input(mensagem).replace(",", ".").strip())
+
 def formatar_solo(solo_item, indice=None):
     """
     Formata um cadastro de solo para exibição.
