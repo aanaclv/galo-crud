@@ -8,5 +8,23 @@
         "cidade": "M",
         "area": 5999.0,
         "cultura": "Milho"
+    },
+    {
+        "id": "1eb81d8aa778fb31",
+        "usuario_id": "ea4b95c950391e3d",
+        "criado_em": "2026-11-26T11:11:33",
+        "propriedade": "terra y",
+        "cidade": "recife",
+        "area": 4000.0,
+        "cultura": "milho"
+    },
+    {
+        "id": "a3a4d6161cb4115f",
+        "usuario_id": "ed7cb3dedaf4dd51",
+        "criado_em": "2026-11-27T15:26:28",
+        "propriedade": "Terra teste",
+        "cidade": "Maranhão",
+        "area": 800000.0,
+        "cultura": "Mamão"
     }
 ]

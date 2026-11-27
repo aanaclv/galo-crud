@@ -5,5 +5,12 @@
         "email": "maria@gmail.com",
         "salt": "4678744b7e41028c4c525e5ca4035b3b",
         "senha_hash": "6151bb8a803cb9203883be836dc3f50685b3b0b248f186e4ecd99139fd60e8f9"
+    },
+    {
+        "id": "ea4b95c950391e3d",
+        "nome": "ana",
+        "email": "ana123@gmail.com",
+        "salt": "91189a7a7940e5978cab13180011a588",
+        "senha_hash": "7cadf2ff8bccd2891b05d2b38f5e9c19a060b2aae2927553be7ba04dfd7de362"
     }
 ]

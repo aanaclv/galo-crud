@@ -1,16 +1,56 @@
 [
     {
-        "id": "5877c06a44fbaecc",
-        "usuario_id": "ed7cb3dedaf4dd51",
-        "solo_id": "32885b51c68c2fb3",
-        "solo_nome": "Sem nome",
-        "criado_em": "2026-11-25T11:22:38",
+        "id": "16660730b9829477",
+        "usuario_id": "ea4b95c950391e3d",
+        "solo_id": "1eb81d8aa778fb31",
+        "propriedade": "terra y",
+        "solo_nome": "terra y",
+        "criado_em": "2026-11-26T11:11:51",
         "diagnostico": {
             "ph": 7.0,
             "classificacao_ph": "Adequado",
-            "fosforo": 8.0,
+            "fosforo": 10.0,
+            "prioridade_fosforo": "Média",
+            "potassio": 2.0,
+            "prioridade_potassio": "Alta",
+            "recomendacoes": [
+                "Melhorar adubação fosfatada."
+            ]
+        },
+        "atualizado_em": "2026-11-26T11:12:13"
+    },
+    {
+        "id": "74c4b4f763c9fcb0",
+        "usuario_id": "ed7cb3dedaf4dd51",
+        "solo_id": "32885b51c68c2fb3",
+        "propriedade": "Terra M",
+        "solo_nome": "Terra M",
+        "criado_em": "2026-11-27T14:53:48",
+        "diagnostico": {
+            "ph": 7.0,
+            "classificacao_ph": "Adequado",
+            "fosforo": 20.0,
+            "prioridade_fosforo": "Média",
+            "potassio": 100.0,
+            "prioridade_potassio": "Média",
+            "recomendacoes": [
+                "Melhorar adubação fosfatada."
+            ]
+        }
+    },
+    {
+        "id": "82d63a82fd73fe4d",
+        "usuario_id": "ed7cb3dedaf4dd51",
+        "solo_id": "a3a4d6161cb4115f",
+        "propriedade": "Terra teste",
+        "solo_nome": "Terra teste",
+        "criado_em": "2026-11-27T15:33:33",
+        "diagnostico": {
+            "ph": 8.0,
+            "classificacao_ph": "Alcalino",
+            "fosforo": 7.0,
             "prioridade_fosforo": "Alta",
-            "potassio": 9.0,
+            "potassio": 8.0,
             "prioridade_potassio": "Alta",
             "recomendacoes": []
         }
