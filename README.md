@@ -133,7 +133,9 @@ galo-crud/
 ├── services/
 │   ├── analise.py
 │   └── regras_diagnostico.py
-│
+├── ui/
+│   ├── formatadores.py
+│   └── menus.py
 ├── db.py
 ├── main.py
 └── README.md
